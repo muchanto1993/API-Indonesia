@@ -1,15 +1,11 @@
 package com.tnc.controller;
 
+import java.io.IOException;
 import java.util.Date;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.stream.JsonReader;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tnc.routing.RoutingProvince;
 import com.tnc.service.ServiceProvince;
 import com.tnc.util.RequestBodyFormat;
@@ -24,8 +20,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 public class ControllerIndonesia {
+
+        // Creating Object of ObjectMapper define in Jakson Api
+        private ObjectMapper objectMapper = new ObjectMapper();
 
         @Autowired
         private ServiceProvince serviceProvince;
@@ -33,6 +35,18 @@ public class ControllerIndonesia {
         @PostMapping("/apiindonesia")
         public ResponseEntity<ResponseFormat> apiIndonesia(HttpServletRequest request,
                         @RequestBody RequestBodyFormat requestBodyFormat) {
+                log.info("Request Client : " + request.getRemoteAddr());
+
+                try {
+                        // get Oraganisation object as a json string
+                        String jsonString = objectMapper.writeValueAsString(requestBodyFormat);
+
+                        // Displaying JSON String
+                        log.info("Request Message : " + jsonString);
+                } catch (IOException e) {
+                        e.printStackTrace();
+                }
+
                 return RoutingFunction(request, requestBodyFormat);
         }
 
@@ -72,6 +86,32 @@ public class ControllerIndonesia {
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
+                        case 301:
+                                responseFormat = routingProvince.allSubDistrict(request, serviceProvince);
+                                responseEntity = ResponseEntity.status(HttpStatus.OK)
+                                                .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
+                                break;
+
+                        case 302:
+                                responseFormat = routingProvince.specificSubDistrictByCity(request, serviceProvince,
+                                                requestDataFormat.getCity());
+                                responseEntity = ResponseEntity.status(HttpStatus.OK)
+                                                .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
+                                break;
+
+                        case 401:
+                                responseFormat = routingProvince.allUrban(request, serviceProvince);
+                                responseEntity = ResponseEntity.status(HttpStatus.OK)
+                                                .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
+                                break;
+
+                        case 402:
+                                responseFormat = routingProvince.specificUrbanBySubDistrict(request, serviceProvince,
+                                                requestDataFormat.getSub_district());
+                                responseEntity = ResponseEntity.status(HttpStatus.OK)
+                                                .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
+                                break;
+
                         case 501:
                                 responseFormat = routingProvince.specificPostalCode(request, serviceProvince,
                                                 requestDataFormat.getPostal_code());
@@ -96,6 +136,16 @@ public class ControllerIndonesia {
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
+                }
+
+                try {
+                        // get Oraganisation object as a json string
+                        String jsonString = objectMapper.writeValueAsString(responseEntity);
+
+                        // Displaying JSON String
+                        log.info("Respose Message : " + jsonString);
+                } catch (IOException e) {
+                        e.printStackTrace();
                 }
 
                 return responseEntity;

@@ -30,7 +30,7 @@ public class SwaggerConfig {
         Contact contact = new Contact("Muhammad Anto Berlianto", "Tech Neural Cyber",
                 "m.antoberlianto1993@gmail.com");
 
-        return new ApiInfo("API untuk Informasi Wilayah Indonesia (Provinsi, Kota, Kelurahan, Kecamatan, Kode Pos",
+        return new ApiInfo("API untuk Informasi Wilayah Indonesia (Provinsi, Kota, Kelurahan, Kecamatan, Kode Pos)",
                 "UI Website API menggunakan Swagger Versi 2.7.0 ", "0.0.1",
                 "", contact, "", "",
                 Collections.emptyList());

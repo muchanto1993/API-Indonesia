@@ -1,23 +1,19 @@
 package com.tnc.routing;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.tnc.entitty.EntityPostalCode;
 import com.tnc.model.ModelCity;
-import com.tnc.model.ModelPostalCode;
 import com.tnc.model.ModelProvince;
+import com.tnc.model.ModelSubDistrict;
+import com.tnc.model.ModelUrban;
 import com.tnc.service.ServiceProvince;
 import com.tnc.util.ResponseFormat;
 import com.tnc.util.ResponseMessageFormat;
 
-import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
-
-import springfox.documentation.service.ResponseMessage;
 
 public class RoutingProvince {
 
@@ -108,6 +104,104 @@ public class RoutingProvince {
 
         /* Set Data Dari Database */
         List<ModelCity> listData = serviceProvince.findSpecificCityByProvinceName(provinceName);
+        int lenghData = listData.size();
+
+        ResponseMessageFormat responseMessageFormat = new ResponseMessageFormat();
+        responseMessageFormat.setLength_data(lenghData);
+        responseMessageFormat.setData(listData);
+
+        responseFormat.setMessage(responseMessageFormat);
+
+        return responseFormat;
+    }
+
+    public ResponseFormat allSubDistrict(HttpServletRequest request, ServiceProvince serviceProvince) {
+        /* Informasi Tentang Nama Method */
+        String nameofCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
+
+        /* Memanggil Class Response yang telah dibuat */
+        ResponseFormat responseFormat = new ResponseFormat();
+        responseFormat.setTimestamp(new Date());
+        responseFormat.setStatus(HttpStatus.OK.value());
+        responseFormat.setError("");
+        responseFormat.setPath(request.getRequestURI() + " | " + nameofCurrMethod);
+
+        /* Set Data Dari Database */
+        List<ModelSubDistrict> listData = serviceProvince.findAllSubDistrict();
+        int lenghData = listData.size();
+
+        ResponseMessageFormat responseMessageFormat = new ResponseMessageFormat();
+        responseMessageFormat.setLength_data(lenghData);
+        responseMessageFormat.setData(listData);
+
+        responseFormat.setMessage(responseMessageFormat);
+
+        return responseFormat;
+    }
+
+    public ResponseFormat specificSubDistrictByCity(HttpServletRequest request, ServiceProvince serviceProvince,
+            String city) {
+        /* Informasi Tentang Nama Method */
+        String nameofCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
+
+        /* Memanggil Class Response yang telah dibuat */
+        ResponseFormat responseFormat = new ResponseFormat();
+        responseFormat.setTimestamp(new Date());
+        responseFormat.setStatus(HttpStatus.OK.value());
+        responseFormat.setError("");
+        responseFormat.setPath(request.getRequestURI() + " | " + nameofCurrMethod);
+
+        /* Set Data Dari Database */
+        List<ModelSubDistrict> listData = serviceProvince.findSpecificSubDistrictByCity(city);
+        int lenghData = listData.size();
+
+        ResponseMessageFormat responseMessageFormat = new ResponseMessageFormat();
+        responseMessageFormat.setLength_data(lenghData);
+        responseMessageFormat.setData(listData);
+
+        responseFormat.setMessage(responseMessageFormat);
+
+        return responseFormat;
+    }
+
+    public ResponseFormat allUrban(HttpServletRequest request, ServiceProvince serviceProvince) {
+        /* Informasi Tentang Nama Method */
+        String nameofCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
+
+        /* Memanggil Class Response yang telah dibuat */
+        ResponseFormat responseFormat = new ResponseFormat();
+        responseFormat.setTimestamp(new Date());
+        responseFormat.setStatus(HttpStatus.OK.value());
+        responseFormat.setError("");
+        responseFormat.setPath(request.getRequestURI() + " | " + nameofCurrMethod);
+
+        /* Set Data Dari Database */
+        List<ModelUrban> listData = serviceProvince.findAllUrban();
+        int lenghData = listData.size();
+
+        ResponseMessageFormat responseMessageFormat = new ResponseMessageFormat();
+        responseMessageFormat.setLength_data(lenghData);
+        responseMessageFormat.setData(listData);
+
+        responseFormat.setMessage(responseMessageFormat);
+
+        return responseFormat;
+    }
+
+    public ResponseFormat specificUrbanBySubDistrict(HttpServletRequest request, ServiceProvince serviceProvince,
+            String subDistrict) {
+        /* Informasi Tentang Nama Method */
+        String nameofCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
+
+        /* Memanggil Class Response yang telah dibuat */
+        ResponseFormat responseFormat = new ResponseFormat();
+        responseFormat.setTimestamp(new Date());
+        responseFormat.setStatus(HttpStatus.OK.value());
+        responseFormat.setError("");
+        responseFormat.setPath(request.getRequestURI() + " | " + nameofCurrMethod);
+
+        /* Set Data Dari Database */
+        List<ModelUrban> listData = serviceProvince.findSpecificUrbanBySubDistrict(subDistrict);
         int lenghData = listData.size();
 
         ResponseMessageFormat responseMessageFormat = new ResponseMessageFormat();

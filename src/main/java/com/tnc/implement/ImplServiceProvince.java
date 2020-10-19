@@ -7,6 +7,8 @@ import com.tnc.entitty.EntityPostalCode;
 import com.tnc.entitty.EntityProvince;
 import com.tnc.model.ModelCity;
 import com.tnc.model.ModelProvince;
+import com.tnc.model.ModelSubDistrict;
+import com.tnc.model.ModelUrban;
 import com.tnc.model.ModelPostalCode;
 import com.tnc.repository.RepositoryPostalCode;
 import com.tnc.repository.RepositoryProvince;
@@ -77,6 +79,62 @@ public class ImplServiceProvince implements ServiceProvince {
             listCity.add(modelCity);
         }
         return listCity;
+    }
+
+    @Override
+    public List<ModelSubDistrict> findAllSubDistrict() {
+        List<String> tempListSubDistrict = repositoryPostalCode.findAllSubDistrict();
+        List<ModelSubDistrict> listSubDistrict = new ArrayList<>();
+        for (int i = 0; i < tempListSubDistrict.size(); i++) {
+            ModelSubDistrict modelSubDistrict = new ModelSubDistrict();
+            modelSubDistrict.setSub_district(tempListSubDistrict.get(i));
+
+            listSubDistrict.add(modelSubDistrict);
+        }
+
+        return listSubDistrict;
+    }
+
+    @Override
+    public List<ModelSubDistrict> findSpecificSubDistrictByCity(String city) {
+        List<String> tempListSubDistrict = repositoryPostalCode.findSubDistrictByCity(city);
+        List<ModelSubDistrict> listSubDistrict = new ArrayList<>();
+        for (int i = 0; i < tempListSubDistrict.size(); i++) {
+            ModelSubDistrict modelSubDistrict = new ModelSubDistrict();
+            modelSubDistrict.setSub_district(tempListSubDistrict.get(i));
+
+            listSubDistrict.add(modelSubDistrict);
+        }
+
+        return listSubDistrict;
+    }
+
+    @Override
+    public List<ModelUrban> findAllUrban() {
+        List<String> tempListUrban = repositoryPostalCode.findAllUrban();
+        List<ModelUrban> listUrban = new ArrayList<>();
+        for (int i = 0; i < tempListUrban.size(); i++) {
+            ModelUrban modelUrban = new ModelUrban();
+            modelUrban.setUrban(tempListUrban.get(i));
+
+            listUrban.add(modelUrban);
+        }
+
+        return listUrban;
+    }
+
+    @Override
+    public List<ModelUrban> findSpecificUrbanBySubDistrict(String sub_district) {
+        List<String> tempListUrban = repositoryPostalCode.findUrbanBySubDistrict(sub_district);
+        List<ModelUrban> listUrban = new ArrayList<>();
+        for (int i = 0; i < tempListUrban.size(); i++) {
+            ModelUrban modelUrban = new ModelUrban();
+            modelUrban.setUrban(tempListUrban.get(i));
+
+            listUrban.add(modelUrban);
+        }
+
+        return listUrban;
     }
 
     @Override
