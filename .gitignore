@@ -1,18 +1,10 @@
 HELP.md
 *.DS_Store
-!spec/*.DS_Store
 
 /log
-
-/.classpath
-/.project
-/.settings
 /target
 
-.mvn/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+/.mvn
 mvnw
 mvnw.cmd
 
