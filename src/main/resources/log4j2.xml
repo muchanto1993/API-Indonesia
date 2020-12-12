@@ -26,28 +26,28 @@
             <PatternLayout pattern="${LOG_PATTERN}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="10 MB" />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
             </Policies>
             <!-- DefaultRolloverStrategy property, if not set, defaults to the maximum of 7 files in the same folder to start over-->
             <DefaultRolloverStrategy max="10" />
         </RollingFile>
 
         <RollingFile name="SpringLog" fileName="${APP_LOG_ROOT}/lib/spring.log" filePattern="${APP_LOG_ROOT}/lib/old/spring-%d{yyyy-MM-dd}_%i.log">
-            <PatternLayout pattern="${LOG_PATTERN}" />
+            <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <OnStartupTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="10 MB" />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="10" />
+            <DefaultRolloverStrategy max="10"/>
         </RollingFile>
 
         <RollingFile name="HibernateLog" fileName="${APP_LOG_ROOT}/lib/hibernate.log" filePattern="${APP_LOG_ROOT}/lib/old/hibernate-%d{yyyy-MM-dd}_%i.log">
-            <PatternLayout pattern="${LOG_PATTERN}" />
+            <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
-                <OnStartupTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="10 MB" />
+                <OnStartupTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="10" />
+            <DefaultRolloverStrategy max="10"/>
         </RollingFile>
 
         <!-- <JDBC name="DatabaseLog" tableName="t_logs">
@@ -62,23 +62,23 @@
 
     <Loggers>
         <Logger name="com.tnc" additivity="false" level="info">
-            <AppenderRef ref="ApplicationLog" />
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="DatabaseLog" />
+            <AppenderRef ref="ApplicationLog"/>
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="DatabaseLog"/>
         </Logger>
 
         <Logger name="org.springframework" additivity="false" level="info">
-            <AppenderRef ref="SpringLog" />
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="SpringLog"/>
+            <AppenderRef ref="Console"/>
         </Logger>
 
         <Logger name="org.hibernate" additivity="false" level="info">
-            <AppenderRef ref="HibernateLog" />
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="HibernateLog"/>
+            <AppenderRef ref="Console"/>
         </Logger>
 
         <Root level="info">
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
 </Configuration>
