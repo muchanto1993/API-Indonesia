@@ -11,26 +11,26 @@ import org.springframework.data.repository.query.Param;
 public interface RepositoryPostalCode extends JpaRepository<EntityPostalCode, Integer> {
 
     /* City - Begin */
-    @Query(value = "select distinct(city) from t_postal_code order by city asc", nativeQuery = true)
+    @Query(value = "select distinct(city) from t_province_detail order by city asc", nativeQuery = true)
     public List<String> findAllCity();
 
-    @Query(value = "select distinct(city) from t_postal_code tpc join t_province tp on tp.province_code = tpc.province_code where upper(tp.province_name) = upper(:province_name) order by city asc", nativeQuery = true)
+    @Query(value = "select distinct(city) from t_province_detail tpc join t_province tp on tp.province_code = tpc.province_code where upper(tp.province_name) = upper(:province_name) order by city asc", nativeQuery = true)
     public List<String> findCityByProvinceName(@Param("province_name") String province_name);
     /* City - End */
 
     /* Sub District - Begin */
-    @Query(value = "select distinct(sub_district) from t_postal_code order by sub_district asc", nativeQuery = true)
+    @Query(value = "select distinct(sub_district) from t_province_detail order by sub_district asc", nativeQuery = true)
     public List<String> findAllSubDistrict();
 
-    @Query(value = "select distinct(sub_district) from t_postal_code where upper(city) = upper(:city) order by sub_district asc", nativeQuery = true)
+    @Query(value = "select distinct(sub_district) from t_province_detail where upper(city) = upper(:city) order by sub_district asc", nativeQuery = true)
     public List<String> findSubDistrictByCity(@Param("city") String city);
     /* Sub District - End */
 
     /* Urban - Begin */
-    @Query(value = "select distinct(urban) from t_postal_code order by urban asc", nativeQuery = true)
+    @Query(value = "select distinct(urban) from t_province_detail order by urban asc", nativeQuery = true)
     public List<String> findAllUrban();
 
-    @Query(value = "select distinct(urban) from t_postal_code where upper(sub_district) = upper(:sub_district) order by urban asc", nativeQuery = true)
+    @Query(value = "select distinct(urban) from t_province_detail where upper(sub_district) = upper(:sub_district) order by urban asc", nativeQuery = true)
     public List<String> findUrbanBySubDistrict(@Param("sub_district") String sub_district);
     /* Urban - End */
 

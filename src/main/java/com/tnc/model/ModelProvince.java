@@ -12,7 +12,7 @@ import lombok.Setter;
 public class ModelProvince {
 
     private String province_name;
-    
+
     private String province_name_en;
 
 }

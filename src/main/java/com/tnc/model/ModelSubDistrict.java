@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @JsonInclude(Include.NON_NULL)
 public class ModelSubDistrict extends ModelCity {
-    
+
     private String sub_district;
 
 }

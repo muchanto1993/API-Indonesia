@@ -29,7 +29,7 @@ public class RoutingProvince {
         responseFormat.setPath(request.getRequestURI() + " | " + nameofCurrMethod);
 
         /* Set Data Dari Database */
-        List<ModelProvince> listData = serviceProvince.findAll();
+        List<ModelProvince> listData = serviceProvince.findAllProvince();
         int lenghData = listData.size();
 
         ResponseMessageFormat responseMessageFormat = new ResponseMessageFormat();

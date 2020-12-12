@@ -1,10 +1,20 @@
 HELP.md
 *.DS_Store
-log/
-target/
+!spec/*.DS_Store
+
+/log
+
+/.classpath
+/.project
+/.settings
+/target
+
+.mvn/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+mvnw
+mvnw.cmd
 
 ### STS ###
 .apt_generated

@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,11 @@ public class ControllerIndonesia {
 
         @Autowired
         private ServiceProvince serviceProvince;
+
+        @GetMapping("/")
+        public String helloIndonesia() {
+                return "Indonesia Service Running";
+        }
 
         @PostMapping("/apiindonesia")
         public ResponseEntity<ResponseFormat> apiIndonesia(HttpServletRequest request,

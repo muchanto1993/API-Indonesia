@@ -27,7 +27,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("Muhammad Anto Berlianto", "Tech Neural Cyber",
+        Contact contact = new Contact("Muhammad Anto Berlianto", "http://techneuralcyber.com/",
                 "m.antoberlianto1993@gmail.com");
 
         return new ApiInfo("API untuk Informasi Wilayah Indonesia (Provinsi, Kota, Kelurahan, Kecamatan, Kode Pos)",

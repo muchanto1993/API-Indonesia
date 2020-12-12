@@ -35,6 +35,8 @@ spring:
 server:
   servlet:
     context-path: /v1
+  
+  port: 8081
 
 ---
 
@@ -42,12 +44,9 @@ spring:
   profiles: dev
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_indonesia
-    username: admin
-    password: B@ndung123
-
-server:
-  port: 8081
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: mab
+    password: 
 
 ---
 
@@ -59,9 +58,6 @@ spring:
     username: admin
     password: B@ndung123
 
-server:
-  port: 8082
-
 ---
 
 spring:
@@ -71,6 +67,3 @@ spring:
     url: jdbc:postgresql://172.18.0.2:5432/db_indonesia
     username: admin
     password: B@ndung123
-
-server:
-  port: 8082

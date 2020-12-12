@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Getter
 @Setter
 @JsonInclude(Include.NON_NULL)
-public class ModelUrban extends ModelSubDistrict{
-    
+public class ModelUrban extends ModelSubDistrict {
+
     private String urban;
 
 }

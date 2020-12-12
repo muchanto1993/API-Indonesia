@@ -27,7 +27,7 @@ public class ImplServiceProvince implements ServiceProvince {
     private RepositoryPostalCode repositoryPostalCode;
 
     @Override
-    public List<ModelProvince> findAll() {
+    public List<ModelProvince> findAllProvince() {
         List<ModelProvince> listProvince = new ArrayList<>();
         for (EntityProvince entityProvince : repositoryProvince.findAll()) {
             ModelProvince modelProvince = new ModelProvince();

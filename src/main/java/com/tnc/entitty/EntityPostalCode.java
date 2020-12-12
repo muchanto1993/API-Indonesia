@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "t_postal_code")
+@Table(name = "t_province_detail")
 @Getter
 @Setter
 public class EntityPostalCode {

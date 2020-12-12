@@ -10,7 +10,7 @@ import com.tnc.model.ModelUrban;
 
 public interface ServiceProvince {
 
-    List<ModelProvince> findAll();
+    List<ModelProvince> findAllProvince();
 
     List<ModelProvince> findSpecificProvinceByProvinceName(String province_name);
 
