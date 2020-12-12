@@ -1,12 +1,7 @@
-HELP.md
+### Project Folder ###
 *.DS_Store
-
-/log
-/target
-
-/.mvn
-mvnw
-mvnw.cmd
+log/
+target/
 
 ### STS ###
 .apt_generated
