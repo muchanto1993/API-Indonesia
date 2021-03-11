@@ -1,4 +1,4 @@
-package com.tnc.entitty;
+package com.mab.entitty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @Table(name = "t_province_detail")
 @Getter
 @Setter
-public class EntityPostalCode {
+public class ProvinceDetailEntity {
 
     @Id
     @Column(name = "id")
@@ -22,7 +22,7 @@ public class EntityPostalCode {
 
     @ManyToOne
     @JoinColumn(name = "province_code", nullable = false)
-    private EntityProvince province;
+    private ProvinceEntity province;
 
     @Column(name = "city")
     private String city;

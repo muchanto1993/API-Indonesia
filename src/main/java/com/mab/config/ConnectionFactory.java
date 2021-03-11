@@ -1,3 +1,4 @@
+package com.mab.config;
 // package com.tnc.config;
 
 // import java.sql.Connection;

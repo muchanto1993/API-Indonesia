@@ -61,7 +61,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="com.tnc" additivity="false" level="info">
+        <Logger name="com.mab" additivity="false" level="info">
             <AppenderRef ref="ApplicationLog"/>
             <AppenderRef ref="Console"/>
             <AppenderRef ref="DatabaseLog"/>

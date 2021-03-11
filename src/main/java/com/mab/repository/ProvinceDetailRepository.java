@@ -1,14 +1,14 @@
-package com.tnc.repository;
+package com.mab.repository;
 
 import java.util.List;
 
-import com.tnc.entitty.EntityPostalCode;
+import com.mab.entitty.ProvinceDetailEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface RepositoryPostalCode extends JpaRepository<EntityPostalCode, Integer> {
+public interface ProvinceDetailRepository extends JpaRepository<ProvinceDetailEntity, Integer> {
 
     /* City - Begin */
     @Query(value = "select distinct(city) from t_province_detail order by city asc", nativeQuery = true)
@@ -35,7 +35,7 @@ public interface RepositoryPostalCode extends JpaRepository<EntityPostalCode, In
     /* Urban - End */
 
     /* Postal Code - Begin */
-    @Query(value = "select epc from EntityPostalCode epc where epc.postal_code = :postal_code")
-    public List<EntityPostalCode> findProvinceDetailByPostalCode(@Param("postal_code") String postal_code);
+    @Query(value = "select epc from ProvinceDetailEntity epc where epc.postal_code = :postal_code")
+    public List<ProvinceDetailEntity> findProvinceDetailByPostalCode(@Param("postal_code") String postal_code);
     /* Postal Code - End */
 }

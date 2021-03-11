@@ -1,4 +1,4 @@
-package com.tnc.util;
+package com.mab.util;
 
 import java.util.Date;
 

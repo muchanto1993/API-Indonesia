@@ -15,8 +15,8 @@ spring:
 
     generate-ddl: true
 
-    hibernate:
-      ddl-auto: update
+    # hibernate:
+    #   ddl-auto: update
 
     open-in-view: false
 

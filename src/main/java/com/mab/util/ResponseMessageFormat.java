@@ -1,4 +1,4 @@
-package com.tnc.util;
+package com.mab.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

@@ -1,13 +1,13 @@
-package com.tnc;
+package com.mab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TncIndonesiaApplication {
+public class MainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TncIndonesiaApplication.class, args);
+		SpringApplication.run(MainApplication.class, args);
 	}
 
 }

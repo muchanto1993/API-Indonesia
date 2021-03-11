@@ -1,4 +1,4 @@
-package com.tnc.controller;
+package com.mab.controller;
 
 import java.io.IOException;
 import java.util.Date;
@@ -6,11 +6,11 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tnc.routing.RoutingProvince;
-import com.tnc.service.ServiceProvince;
-import com.tnc.util.RequestBodyFormat;
-import com.tnc.util.RequestDataFormat;
-import com.tnc.util.ResponseFormat;
+import com.mab.routing.RoutingProvince;
+import com.mab.service.IndonesiaService;
+import com.mab.util.RequestBodyFormat;
+import com.mab.util.RequestDataFormat;
+import com.mab.util.ResponseFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,17 +25,17 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-public class ControllerIndonesia {
+public class IndonesiaController {
 
         // Creating Object of ObjectMapper define in Jakson Api
         private ObjectMapper objectMapper = new ObjectMapper();
 
         @Autowired
-        private ServiceProvince serviceProvince;
+        private IndonesiaService serviceProvince;
 
         @GetMapping("/")
         public String helloIndonesia() {
-                return "Indonesia Service Running";
+                return "Indonesia Service is Running";
         }
 
         @PostMapping("/apiindonesia")

@@ -1,4 +1,4 @@
-package com.tnc.entitty;
+package com.mab.entitty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Table(name = "t_province")
 @Getter
 @Setter
-public class EntityProvince {
+public class ProvinceEntity {
 
     @Id
     @Column(name = "province_code")

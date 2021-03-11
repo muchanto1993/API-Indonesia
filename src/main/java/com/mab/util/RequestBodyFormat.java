@@ -1,18 +1,19 @@
-package com.tnc.model;
+package com.mab.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @JsonInclude(Include.NON_NULL)
-public class ModelProvince {
+public class RequestBodyFormat {
 
-    private String province_name;
-
-    private String province_name_en;
+    private Integer function_code;
+    private RequestDataFormat data;
 
 }

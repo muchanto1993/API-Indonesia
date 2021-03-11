@@ -1,4 +1,4 @@
-package com.tnc.config;
+package com.mab.config;
 
 import java.util.Collections;
 
@@ -31,8 +31,7 @@ public class SwaggerConfig {
                 "m.antoberlianto1993@gmail.com");
 
         return new ApiInfo("API untuk Informasi Wilayah Indonesia (Provinsi, Kota, Kelurahan, Kecamatan, Kode Pos)",
-                "UI Website API menggunakan Swagger Versi 2.7.0 ", "0.0.1",
-                "", contact, "", "",
+                "UI Website API menggunakan Swagger Versi 2.7.0 ", "0.0.1", "", contact, "", "",
                 Collections.emptyList());
     }
 }
