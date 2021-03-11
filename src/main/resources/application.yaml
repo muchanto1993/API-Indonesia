@@ -46,7 +46,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: mab
-    password: 
+    password: B@ndung123
 
 ---
 
@@ -55,8 +55,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://172.18.0.2:5432/db_indonesia
-    username: admin
-    password: B@ndung123
+    username: 
+    password: 
 
 ---
 
@@ -65,5 +65,5 @@ spring:
 
   datasource:
     url: jdbc:postgresql://172.18.0.2:5432/db_indonesia
-    username: admin
-    password: B@ndung123
+    username: 
+    password: 
