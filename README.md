@@ -1,2 +1,2 @@
-# API-Indonesia-TnC
- API Data Wilayah Indonesia
+# API Wilayah Indonesia
+ API Wilayah Indonesia, Terdiri Data-data Wilayah Di Negara Republik Indonesia
