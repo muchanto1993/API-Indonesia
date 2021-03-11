@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Hello - DEV",
+			"name": "Hello",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -26,7 +26,36 @@
 			"response": []
 		},
 		{
-			"name": "All Province - DEV",
+			"name": "All City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"function_code\" : 201,\n    \"data\" : {\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/apiindonesia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"apiindonesia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Province",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -61,36 +90,7 @@
 			"response": []
 		},
 		{
-			"name": "All City - DEV",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"function_code\" : 201,\n    \"data\" : {\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8081/v1/apiindonesia",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"v1",
-						"apiindonesia"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "All Sub District - DEV",
+			"name": "All Sub District",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -119,7 +119,7 @@
 			"response": []
 		},
 		{
-			"name": "All Urban - DEV",
+			"name": "All Urban",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -148,7 +148,7 @@
 			"response": []
 		},
 		{
-			"name": "Specific Province Name - DEV",
+			"name": "Specific Province Name",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -177,7 +177,7 @@
 			"response": []
 		},
 		{
-			"name": "Specific City - DEV",
+			"name": "Specific City",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -206,7 +206,7 @@
 			"response": []
 		},
 		{
-			"name": "Specific Sub District - DEV",
+			"name": "Specific Sub District",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -235,7 +235,7 @@
 			"response": []
 		},
 		{
-			"name": "Specific Urban - DEV",
+			"name": "Specific Urban",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -264,7 +264,7 @@
 			"response": []
 		},
 		{
-			"name": "Specific Postal Code - DEV",
+			"name": "Specific Postal Code",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -292,6 +292,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
