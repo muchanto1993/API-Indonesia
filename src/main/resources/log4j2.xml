@@ -22,7 +22,7 @@
             <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" />
         </Console>
 
-        <RollingFile name="ApplicationLog" fileName="${APP_LOG_ROOT}/application.log" filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}_%i.log">
+        <RollingFile name="ApplicationLog" fileName="${APP_LOG_ROOT}/API-INDONESIA.log" filePattern="${APP_LOG_ROOT}/old/application-%d{yyyy-MM-dd}_%i.log">
             <PatternLayout pattern="${LOG_PATTERN}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
@@ -32,7 +32,7 @@
             <DefaultRolloverStrategy max="10" />
         </RollingFile>
 
-        <RollingFile name="SpringLog" fileName="${APP_LOG_ROOT}/lib/spring.log" filePattern="${APP_LOG_ROOT}/lib/old/spring-%d{yyyy-MM-dd}_%i.log">
+        <RollingFile name="SpringLog" fileName="${APP_LOG_ROOT}/lib/Spring.log" filePattern="${APP_LOG_ROOT}/lib/old/spring-%d{yyyy-MM-dd}_%i.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <OnStartupTriggeringPolicy />
@@ -41,7 +41,7 @@
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
 
-        <RollingFile name="HibernateLog" fileName="${APP_LOG_ROOT}/lib/hibernate.log" filePattern="${APP_LOG_ROOT}/lib/old/hibernate-%d{yyyy-MM-dd}_%i.log">
+        <RollingFile name="HibernateLog" fileName="${APP_LOG_ROOT}/lib/Hibernate.log" filePattern="${APP_LOG_ROOT}/lib/old/hibernate-%d{yyyy-MM-dd}_%i.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <OnStartupTriggeringPolicy/>

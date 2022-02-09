@@ -27,11 +27,11 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("Muhammad Anto Berlianto", "http://techneuralcyber.com/",
+        Contact contact = new Contact("Muhammad Anto Berlianto", "http://mab-tech.com/",
                 "m.antoberlianto1993@gmail.com");
 
         return new ApiInfo("API untuk Informasi Wilayah Indonesia (Provinsi, Kota, Kelurahan, Kecamatan, Kode Pos)",
-                "UI Website API menggunakan Swagger Versi 2.7.0 ", "0.0.1", "", contact, "", "",
+                "UI Website API menggunakan Swagger Versi 3.0.0 ", "1.0.0", "", contact, "", "",
                 Collections.emptyList());
     }
 }

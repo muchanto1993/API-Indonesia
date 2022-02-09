@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBAPPNAME=api-indonesia-tnc-0.0.1
+WEBAPPNAME=api-indonesia-1.0.1
 
 echo "##### removing container docker $WEBAPPNAME"
 docker rm --force $WEBAPPNAME
