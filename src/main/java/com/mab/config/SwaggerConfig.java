@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 "m.antoberlianto1993@gmail.com");
 
         return new ApiInfo("API untuk Informasi Wilayah Indonesia (Provinsi, Kota, Kelurahan, Kecamatan, Kode Pos)",
-                "UI Website API menggunakan Swagger Versi 3.0.0 ", "1.0.0", "", contact, "", "",
+                "UI Website API menggunakan Swagger Versi 3.0.0 ", "1.0.1", "", contact, "", "",
                 Collections.emptyList());
     }
 }
