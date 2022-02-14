@@ -1,0 +1,1 @@
+java -jar API-Indonesia-1.0.1.jar --spring.config.location=config/application.yaml 

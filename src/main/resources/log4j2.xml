@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Configuration behind the configuration, this is used to set the internal information output of log4j2, can not be set, when set to trace, you will see various detailed output inside log4j2 -->
 <!--monitorInterval: Log4j can automatically detect the modified configuration file and reconfigure itself, set the interval seconds -->
-<Configuration status="INFO" monitorInterval="30">
+<!-- <Configuration status="INFO" monitorInterval="30"> -->
+<Configuration status="INFO">
     <!--Log level and priority ordering: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
 
     <!--Variable Configuration -->
@@ -14,7 +15,7 @@
     </Properties>
 
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
+        <Console name="ConsoleLog" target="SYSTEM_OUT">
             <!--Format of output log -->
             <PatternLayout pattern="%highlight{${LOG_PATTERN}}" />
 
@@ -49,36 +50,26 @@
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-
-        <!-- <JDBC name="DatabaseLog" tableName="t_logs">
-            <ConnectionFactory class="com.tnc.config.ConnectionFactory" method="getDatabaseConnection" />
-            <ColumnMapping name="log_id" pattern="%uuid{TIME}" type="java.util.UUID"/>
-            <ColumnMapping name="entry_date" pattern="%d"/>
-            <ColumnMapping name="logger" pattern="%c"/>
-            <ColumnMapping name="log_level" pattern="%level"/>
-            <ColumnMapping name="message" pattern="%m"/>
-        </JDBC> -->
     </Appenders>
 
     <Loggers>
         <Logger name="com.mab" additivity="false" level="info">
             <AppenderRef ref="ApplicationLog"/>
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="DatabaseLog"/>
+            <AppenderRef ref="ConsoleLog"/>
         </Logger>
 
         <Logger name="org.springframework" additivity="false" level="info">
             <AppenderRef ref="SpringLog"/>
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ConsoleLog"/>
         </Logger>
 
         <Logger name="org.hibernate" additivity="false" level="info">
             <AppenderRef ref="HibernateLog"/>
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ConsoleLog"/>
         </Logger>
 
         <Root level="info">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ConsoleLog"/>
         </Root>
     </Loggers>
 </Configuration>
