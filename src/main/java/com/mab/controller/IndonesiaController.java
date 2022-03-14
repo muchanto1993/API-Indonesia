@@ -31,7 +31,7 @@ public class IndonesiaController {
         private ObjectMapper objectMapper = new ObjectMapper();
 
         @Autowired
-        private IndonesiaService serviceProvince;
+        private IndonesiaService indonesiaService;
 
         @GetMapping("/")
         public String helloIndonesia() {
@@ -67,59 +67,59 @@ public class IndonesiaController {
 
                 switch (function_code) {
                         case 101:
-                                responseFormat = routingProvince.allProvince(request, serviceProvince);
+                                responseFormat = routingProvince.allProvince(request, indonesiaService);
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 102:
-                                responseFormat = routingProvince.specificProvinceName(request, serviceProvince,
+                                responseFormat = routingProvince.specificProvinceName(request, indonesiaService,
                                                 requestDataFormat.getProvince_name());
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 201:
-                                responseFormat = routingProvince.allCity(request, serviceProvince);
+                                responseFormat = routingProvince.allCity(request, indonesiaService);
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 202:
-                                responseFormat = routingProvince.specificCityByProvinceName(request, serviceProvince,
+                                responseFormat = routingProvince.specificCityByProvinceName(request, indonesiaService,
                                                 requestDataFormat.getProvince_name());
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 301:
-                                responseFormat = routingProvince.allSubDistrict(request, serviceProvince);
+                                responseFormat = routingProvince.allSubDistrict(request, indonesiaService);
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 302:
-                                responseFormat = routingProvince.specificSubDistrictByCity(request, serviceProvince,
+                                responseFormat = routingProvince.specificSubDistrictByCity(request, indonesiaService,
                                                 requestDataFormat.getCity());
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 401:
-                                responseFormat = routingProvince.allUrban(request, serviceProvince);
+                                responseFormat = routingProvince.allUrban(request, indonesiaService);
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 402:
-                                responseFormat = routingProvince.specificUrbanBySubDistrict(request, serviceProvince,
+                                responseFormat = routingProvince.specificUrbanBySubDistrict(request, indonesiaService,
                                                 requestDataFormat.getSub_district());
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);
                                 break;
 
                         case 501:
-                                responseFormat = routingProvince.specificPostalCode(request, serviceProvince,
+                                responseFormat = routingProvince.specificPostalCode(request, indonesiaService,
                                                 requestDataFormat.getPostal_code());
                                 responseEntity = ResponseEntity.status(HttpStatus.OK)
                                                 .contentType(MediaType.APPLICATION_JSON).body(responseFormat);

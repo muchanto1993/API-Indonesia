@@ -1,3 +1,8 @@
+# Disable Swagger UI
+enable:
+  swagger:
+    plugin: true
+
 spring:
   profiles:
     active: "dev"
