@@ -68,7 +68,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		<!-- ===== Additional Area - End ===== -->
-
 	</dependencies>
 
 	<build>
