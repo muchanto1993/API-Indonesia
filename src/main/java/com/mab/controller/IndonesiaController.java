@@ -6,11 +6,11 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mab.routing.RoutingProvince;
+import com.mab.format.RequestBodyFormat;
+import com.mab.format.RequestDataFormat;
+import com.mab.format.ResponseFormat;
+import com.mab.routing.ProvinceRouting;
 import com.mab.service.IndonesiaService;
-import com.mab.util.RequestBodyFormat;
-import com.mab.util.RequestDataFormat;
-import com.mab.util.ResponseFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,7 +61,7 @@ public class IndonesiaController {
                 int function_code = requestBodyFormat.getFunction_code();
                 RequestDataFormat requestDataFormat = requestBodyFormat.getData();
 
-                RoutingProvince routingProvince = new RoutingProvince();
+                ProvinceRouting routingProvince = new ProvinceRouting();
                 ResponseFormat responseFormat = new ResponseFormat();
                 ResponseEntity<ResponseFormat> responseEntity = null;
 

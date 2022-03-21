@@ -1,4 +1,4 @@
-package com.mab.util;
+package com.mab.format;
 
 import java.util.Date;
 

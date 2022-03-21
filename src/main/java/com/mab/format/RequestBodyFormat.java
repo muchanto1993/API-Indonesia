@@ -1,4 +1,4 @@
-package com.mab.util;
+package com.mab.format;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -11,12 +11,9 @@ import lombok.ToString;
 @Setter
 @ToString
 @JsonInclude(Include.NON_NULL)
-public class RequestDataFormat {
+public class RequestBodyFormat {
 
-    private String province_name;
-    private String city;
-    private String sub_district;
-    private String urban;
-    private String postal_code;
+    private Integer function_code;
+    private RequestDataFormat data;
 
 }

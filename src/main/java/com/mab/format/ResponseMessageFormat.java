@@ -1,4 +1,4 @@
-package com.mab.util;
+package com.mab.format;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

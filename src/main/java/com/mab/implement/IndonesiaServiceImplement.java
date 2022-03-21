@@ -3,8 +3,8 @@ package com.mab.implement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mab.entitty.ProvinceDetailEntity;
-import com.mab.entitty.ProvinceEntity;
+import com.mab.entity.ProvinceDetailEntity;
+import com.mab.entity.ProvinceEntity;
 import com.mab.model.CityModel;
 import com.mab.model.PostalCodeModel;
 import com.mab.model.ProvinceModel;

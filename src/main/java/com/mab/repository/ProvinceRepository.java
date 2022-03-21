@@ -2,7 +2,7 @@ package com.mab.repository;
 
 import java.util.List;
 
-import com.mab.entitty.ProvinceEntity;
+import com.mab.entity.ProvinceEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

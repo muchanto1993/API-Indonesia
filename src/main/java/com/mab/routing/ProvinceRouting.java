@@ -5,17 +5,17 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.mab.format.ResponseFormat;
+import com.mab.format.ResponseMessageFormat;
 import com.mab.model.CityModel;
 import com.mab.model.ProvinceModel;
 import com.mab.model.SubDistrictModel;
 import com.mab.model.UrbanModel;
 import com.mab.service.IndonesiaService;
-import com.mab.util.ResponseFormat;
-import com.mab.util.ResponseMessageFormat;
 
 import org.springframework.http.HttpStatus;
 
-public class RoutingProvince {
+public class ProvinceRouting {
 
     public ResponseFormat allProvince(HttpServletRequest request, IndonesiaService serviceProvince) {
         /* Informasi Tentang Nama Method */
