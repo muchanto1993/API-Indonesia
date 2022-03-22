@@ -26,36 +26,7 @@
 			"response": []
 		},
 		{
-			"name": "All City",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"function_code\" : 201,\n    \"data\" : {\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8081/v1/apiindonesia",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"v1",
-						"apiindonesia"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "All Province",
+			"name": "1. All Province",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -67,7 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"function_code\" : 101,\n    \"data\" : {\n    }\n}",
+					"raw": "{\n    \"function_code\" : 101\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,13 +61,13 @@
 			"response": []
 		},
 		{
-			"name": "All Sub District",
+			"name": "2. All City",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"function_code\" : 301,\n    \"data\" : {\n    }\n}",
+					"raw": "{\n    \"function_code\" : 201\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,13 +90,42 @@
 			"response": []
 		},
 		{
-			"name": "All Urban",
+			"name": "3. All Sub District",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"function_code\" : 401,\n    \"data\" : {\n    }\n}",
+					"raw": "{\n    \"function_code\" : 301\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/apiindonesia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"apiindonesia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. All Urban",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"function_code\" : 401\n}",
 					"options": {
 						"raw": {
 							"language": "json"
