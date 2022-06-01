@@ -33,7 +33,9 @@ server:
   port: 8081
 ---
 spring:
-  profiles: dev
+  config: 
+    activate: 
+      on-profile: dev
 
   datasource:
     url: jdbc:postgresql://localhost:5432/DB_Indonesia
@@ -41,7 +43,9 @@ spring:
     password:
 ---
 spring:
-  profiles: uat
+  config: 
+    activate: 
+      on-profile: uat
 
   datasource:
     url: jdbc:postgresql://192.168.1.10:5432/DB_Indonesia
@@ -49,7 +53,9 @@ spring:
     password:
 ---
 spring:
-  profiles: prod
+  config: 
+    activate: 
+      on-profile: prod
 
   datasource:
     url: jdbc:postgresql://0.0.0.0:5432/DB_Indonesia
