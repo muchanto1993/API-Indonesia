@@ -7,22 +7,22 @@ spring:
   profiles:
     active: "dev"
   # main:
-  #   banner-mode: "off"
+  # banner-mode: "off"
   jmx:
     enabled: false
   jpa:
     database: POSTGRESQL
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
-    generate-ddl: true
+    # generate-ddl: true
     # hibernate:
     #   ddl-auto: update
     open-in-view: false
     properties:
       hibernate:
         format_sql: true
-        generate_statistics: false
-        temp:
-          use_jdbc_metadata_defaults: false
+        # generate_statistics: false
+        # temp:
+        # use_jdbc_metadata_defaults: false
     show-sql: true
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -33,18 +33,18 @@ server:
   port: 8081
 ---
 spring:
-  config: 
-    activate: 
+  config:
+    activate:
       on-profile: dev
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/DB_Indonesia
-    username: mab
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: anto
     password:
 ---
 spring:
-  config: 
-    activate: 
+  config:
+    activate:
       on-profile: uat
 
   datasource:
@@ -53,8 +53,8 @@ spring:
     password:
 ---
 spring:
-  config: 
-    activate: 
+  config:
+    activate:
       on-profile: prod
 
   datasource:
